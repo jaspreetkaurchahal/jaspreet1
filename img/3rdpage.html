@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" 
+         href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <script>
+         $( document ).on( "pagecreate", "#mypage", function() {
+            $( document ).on( "swipeleft swiperight", "#mypage", function( e ) {
+               if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+                  if ( e.type === "swipeleft" ) {
+                     $( "#right-panel" ).panel( "open" );
+                  } else if ( e.type === "swiperight" ) {
+                     $( "#left-panel" ).panel( "open" );
+                  }
+               }
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+      <div data-role = "page" id = "pageone">
+         <div data-role = "header">
+            <h2>Header</h2>
+            <a href = "#left-panel" data-icon = "carat-r" data-iconpos = "notext"  
+               class = "ui-nodisc-icon">Open left panel</a>
+            <a href = "#right-panel" data-icon = "carat-l" data-iconpos = "notext" 
+               class = "ui-nodisc-icon">Open right panel</a>
+            <h1>Description of book </h1>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+            
+            <p>Red Alert is a 1958 novel by Peter George about nuclear war. The book was the underlying inspiration for Stanley Kubrick's 1964 film Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb. Kubrick's film differs significantly from the novel in that it is a black comedy.
+
+Originally published in the UK as Two Hours to Doom, with George using the pseudonym "Peter Bryant" (Bryan Peters for the French translation, 120 minutes pour sauver le monde), the novel deals with the apocalyptic threat of nuclear war and the almost absurd ease with which it can be triggered. A genre of such topical fiction, of which Red Alert was among the earliest examples, sprang up in the late 1950s, led by Nevil Shute's On the Beach.
+
+Eugene Burdick and Harvey Wheeler's later best-seller, Fail-Safe, so closely resembled Red Alert in its premise that George sued on the charge of copyright infringement, resulting in an out-of-court settlement. Both novels would inspire very different films that would both be released in 1964 by the same studio (Columbia Pictures).
+
+</p>
+
+         <div data-role = "panel" id = "left-panel" data-theme = "b">
+            <p>This is left panel.</p>
+              <a href="3rdpage.html">
+           <img src="img/img1.jpg" height="200" width="200">
+            <a href = "#" data-rel = "close" class = "ui-btn ui-btn-inline ui-icon-delete 
+               ui-btn-icon-left">Close Panel</a>
+         </div>
+         
+         <div data-role = "panel" id = "right-panel" data-display = "push" 
+            data-position = "right" data-theme = "b">
+            <p>This is right panel.</p>
+            <a href="3rdpage.html">
+            <img src="img/img2.jpg" height="200" width="200">
+            <a href = "#" data-rel = "close" class = "ui-btn ui-btn-inline ui-icon-delete 
+               ui-btn-icon-right">Close Panel</a>
+         </div>
+      </div>
+         </div>
+
+         <div data-role = "footer">
+            <h1>peter george</h1>
+         </div>
+      </div>
+   </body>
+</html>
